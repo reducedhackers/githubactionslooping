@@ -31,6 +31,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          echo "Dmeonstrate you can just cat the flie"
           cat sourcepaths.txt
-          
+          echo "now put that into a Varaible"
+          LISTOFILES=$(cat sourcepaths.txt)
+          echo $LISTOFFILES
           
