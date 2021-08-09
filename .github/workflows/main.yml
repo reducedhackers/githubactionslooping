@@ -34,6 +34,6 @@ jobs:
           echo "Dmeonstrate you can just cat the flie"
           cat sourcepaths.txt
           echo "now put that into a Varaible"
-          LISTOFILES=$(cat sourcepaths.txt)
-          echo $LISTOFFILES
+          LISTFILES=$(cat sourcepaths.txt)
+          echo $LISTFILES
           
