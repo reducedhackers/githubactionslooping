@@ -1,0 +1,3 @@
+/var/www/path1
+/var/www/sites/path2
+/var/www/html
