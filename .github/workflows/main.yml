@@ -31,9 +31,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo "Dmeonstrate you can just cat the flie"
+          echo "Demonstrate you can just cat the flie"
           cat sourcepaths.txt
           echo "now put that into a Varaible"
           LISTFILES=$(cat sourcepaths.txt)
-          echo $LISTFILES
+          echo "$LISTFILES"
+          echo "Now bring it together and do something loopful"
+          for f in $LISTFILES; do 
+            echo "Do Some Command on this path $f"
+          done
+          
           
