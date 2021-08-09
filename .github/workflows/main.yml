@@ -27,11 +27,11 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Run a multi-line script looping on the content of a file in the repo
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo "Demonstrate you can just cat the flie"
+          echo "Demonstrate you can just cat the file"
           cat sourcepaths.txt
           echo "now put that into a Varaible"
           LISTFILES=$(cat sourcepaths.txt)
@@ -40,5 +40,19 @@ jobs:
           for f in $LISTFILES; do 
             echo "Do Some Command on this path $f"
           done
-          
-          
+      
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script looping on the content of a environment variable
+        env:
+          LISTOFPATHS: "
+          /var/www/path2
+          /var/www/html/path3"
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          echo "Demonstrate you can just echo the Variable"
+          echo ${{ env.LISTOFPATHS }}
+          for f in ${{ LISTOFPATHS }}; do 
+            echo "Do Some Command on this path $f"
+          done
+      
