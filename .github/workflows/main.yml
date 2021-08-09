@@ -42,7 +42,7 @@ jobs:
           done
       
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script looping on the content of a environment variable; not how there is no quotes aroun the variable
+      - name: Run a multi-line script looping on the content of a environment variable; note how there is no quotes aroun the variable
         env:
           LISTOFPATHS: |
             /var/www/path2
@@ -52,6 +52,7 @@ jobs:
           echo test, and deploy your project.
           echo "Demonstrate you can just echo the Variable"
           echo "${{ env.LISTOFPATHS }}"
+          echo "Now echo that variable into the for loop, enclosing the string as well"
           for f in $(echo "${{ env.LISTOFPATHS }}"); do 
             echo "Do Some Command on this path $f"
           done
