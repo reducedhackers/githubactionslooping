@@ -52,7 +52,7 @@ jobs:
           echo test, and deploy your project.
           echo "Demonstrate you can just echo the Variable"
           echo ${{ env.LISTOFPATHS }}
-          for f in ${{ LISTOFPATHS }}; do 
+          for f in ${{ env.LISTOFPATHS }}; do 
             echo "Do Some Command on this path $f"
           done
       
